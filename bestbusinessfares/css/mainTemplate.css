@@ -1,0 +1,316 @@
+/* 
+*@author Venkatesh Javaji
+*Remove the navbar's default margin-bottom and rounded borders 
+*/
+body {
+    position: relative;
+}
+head,body, #googleMap{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+.logo{
+    font-weight: bold;
+}
+.licontt{
+    top:10px;
+    color: white;
+}
+.licontb{
+    top:45px;
+    right:150px;
+    color: white;
+}
+/*#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    min-height: 25px;
+}*/
+
+#headertop{padding-top: 50px}
+#about{padding-top: 35px}
+#samplefare{padding-top: 50px}
+#contactus{padding-top: 55px}
+#howit{padding-top: 35px;}
+
+
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    min-height:200px;
+}
+
+.carousel-inner > .item {
+    height:700px;
+}
+
+.form-table{
+    background: rgba(0,0,0,.5) url("../img/widget_transparent.png") repeat 0 0;
+    margin-top: 0;
+    /*padding: 10px 0;*/
+    width: 90%;
+    height: 690px;
+    position: absolute;
+    top: 60px;
+    margin-left: 70px;
+    color: #fff;
+}
+.quote-right{
+    top: 100px;
+    left: 800px;
+    position: absolute;
+}
+.quote-right h2{
+    font-size: 35px;
+    font-weight: bolder;
+    color: #c31625;
+    font-family: Verdana;
+    padding: 10px;
+    border-left: 6px solid #c31625;
+    background: #f3f4f8;
+}
+.form-div{
+
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+
+/*Date picker header background color*/
+.ui-widget-header{
+    background: #64a1ed;
+    color: #ffffff;
+}
+.howit{
+    border: 1px solid #cbcaca;
+    line-height: 25px;
+}
+
+.howit h1{
+    font-weight: bold;
+    color: #667078;
+}
+
+.howit h4{
+    font-weight: bold;
+    color: #667078;
+}
+.hwcn{
+    border: 1px solid antiquewhite;
+    margin-bottom: 10px;
+}
+.aboutus{
+    background: transparent url("../img/aboutus.png") repeat 0 0;
+    background-size: cover;
+    background-color: #111213;
+}
+.abthd {
+    color: #cbcaca;
+}
+.abthd h1{
+    font-weight: bold;
+}
+
+.cuhd h1{
+
+    border-left: 10px solid  #6cba72;
+    border-bottom: 2px solid  #6cba72;
+    font-weight: bold;
+    color: #6cba72;
+    padding-left: 5px;
+}
+.contcon h3{
+    font-weight: bold;
+
+}
+
+
+.abcn{
+    text-align: left;
+    color:    #777; 
+    line-height: 25px;
+
+}
+
+.abcn h3{
+    text-align: center;
+}
+.abcn ul{
+    list-style: symbols;
+    text-align: left;
+}
+
+.contactusdiv{
+    /*background: transparent url("../img/contactus.jpg") repeat 0 0;
+    background-size: cover;*/
+
+}
+.about-one,.about-two{
+    background: #fff;
+}
+.sbanner{
+    background: transparent url("../img/samplefarebanner.jpg") no-repeat 0 0;
+    background-size: cover;
+}
+
+.asia{
+    background: transparent url("../img/in_3.jpg") no-repeat 0 0;
+    background-size: cover; 
+    height: 450px;
+    width: 100%;
+}
+.middleeast{
+    background: transparent url("../img/in_1.jpg") no-repeat 0 0;
+    background-size: cover; 
+    height: 450px;
+    width: 100%;
+}
+
+.ausnew{
+    background: transparent url("../img/aa-1.jpg") no-repeat 0 0;
+    background-size: cover; 
+    height: 450px;
+    width: 100%;
+}
+.europe{
+    background: transparent url("../img/jl-1.jpg") no-repeat 0 0;
+    background-size: cover; 
+    height: 450px;
+    width: 100%;
+}
+.uscanada{
+    background: transparent url("../img/ba-1.jpg") no-repeat 0 0;
+    background-size: cover; 
+    height: 450px;
+    width: 100%;
+}
+.samfare h2{
+    font-weight: bold;
+}
+.samfare h3{
+    text-align: center;
+    background-color: #285276;
+    color: #f0f2f3;
+    padding: 10px;
+    margin-bottom: 0;
+}
+#samplefare{
+    /*background: transparent url("../img/wmap.jpg") no-repeat 0 0;
+    background-size: cover; 
+    color: #f0f2f3;*/
+}
+.fares img{
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+.contcon ul{
+    list-style: none;
+    padding-left:0;
+}
+.contcon ul li{
+    padding-bottom: 10px;
+}
+.contcon{
+    color: #888;
+    /* min-height: 550px;*/
+}
+.contus .col-sm-8,.col-sm-4{
+
+}
+.mapdiv{
+    margin-bottom: 10px;
+}
+.mapdiv h4{
+    font-weight: bolder;
+}
+footer{
+    /* background:#333;
+     color:#fff;*/
+    background: transparent url("../img/contactus.jpg") repeat 0 0;
+    background-size: cover;
+}
+.footertext{
+    font-weight: bold;
+    background: #31708f;
+    padding: 25px;
+    text-align: center;
+    color: #b3b7b9;
+}
+.footertext a{
+    text-decoration: none;
+    color: #b3b7b9;
+}
+/*
+
+*/
+iframe .login-control{
+    display:none !important;
+}
+
+iframe{
+    border: 5px solid #b3b7b9 !important;
+    border-radius: 5px;
+}
+/* Add a gray background color and some padding to the footer 
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}*/
+
+
+#clientsSlider{
+    height: 46px;
+    background: #e5e5e5 url('../img/AirlineLogos.jpg') repeat 0 center;
+    margin: 0 auto;
+}
+
+.ui-autocomplete {
+    position: absolute;
+    z-index: 1000;
+    cursor: default;
+    padding: 0;
+    margin-top: 2px;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.ui-autocomplete > li {
+    padding: 3px 20px;
+}
+.ui-autocomplete > li.ui-state-focus {
+    background-color: #DDD;
+}
+.ui-helper-hidden-accessible {
+    display: none;
+}
+.error{
+    position: relative !important;
+    color: red !important;
+    font-weight: bold;
+}
+input{
+    font-size: 15px !important;
+}
+
+.multi1,.multi2,.multi3,.multi4{
+    display: none;
+}
