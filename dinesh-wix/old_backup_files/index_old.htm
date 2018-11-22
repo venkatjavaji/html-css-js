@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--<link rel="shortcut icon" href="img/bbf_02.png" />-->
+        <!-- Latest compiled and minified CSS -->
+		
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		 <link type="text/css" rel="stylesheet" href="../strict-sl.css" />
+		
+        <!-- jQuery library -->
+		<!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>	
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+        <!--to access global variable-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script type="text/javascript" src="js/airportList.js"></script>
+        <script type="text/javascript" src="js/quote.js"></script>
+		<script type="text/javascript" src="js/quote-sub.js"></script>
+		
+        <!--<link type="text/css" rel="stylesheet" href="css/mainTemplate.css"/>-->
+        <title>Home | BestBusinessFares</title>	
+		<style>
+			 .mybtn.active {background-color : #b0bcbb85 !important;
+					color : #474545 !important;
+			}
+			.mybtn {
+				color: #777575 !important;
+			}
+			.mybtn:hover {
+				background-color : #b0bcbb85 !important;
+				color : #474545 !important;
+			}
+			.passcabin:hover{
+				background-color: white!important;
+				color: #918f8f;
+			}
+		</style>
+		<script>
+		 
+	</script>
+	</head>		
+	
+<body>
+
+	<div class="container">
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+		<a class="navbar-brand" href="#">Navbar</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link" href="#">Home
+						<!--<span class="sr-only">(current)</span>-->
+				</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Offers</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Amenities</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">About Us</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	</div>
+
+
+
+	<div class="divone" style="" ng-app="bdf" ng-controller="bdfCtrl">
+		<div class="container" data-ng-init="onLoadFun()">
+			<div class="row">
+				<div class="col-lg-8">
+					
+					<form name="quotation" id="quotation"  ng-submit="submitForm()">
+						<div class="row">
+							<div class="col-lg-8 ">
+										
+								<div class="col-lg-12 col-xs-12">
+									<h4 style="color:#686869">Get a Free Quote</h4>
+								</div>
+								<div class="col-lg-12 col-xs-12  d-none d-sm-block">
+									<ol class="list-inline" style="font-size: 10px;">
+										<li class="list-inline-item">SUBMIT A REQUEST <span class="fa fa-chevron-right" style="color: #c9cdd1;"></span></li>
+										<li class="list-inline-item">RECEIVE FLIGHT OPTIONS <span class="fa fa-chevron-right" style="color: #c9cdd1;"></span></li>
+										<li class="list-inline-item">CONFIRM AND TRAVEL</li>
+									</ol>
+								</div>
+								
+								<div class="col-lg-12 col-xs-12  d-block d-sm-none">
+									<ol class="" style="font-size: 14px;">
+										<li>Complete the request form or call to speak to one of our Travel Experts.</li>
+										<li>Detailed itineraries, reasonable rates, best-matching flights.</li>
+										<li>Confirm seat-assignment, pay securely online and receive your e-tickets via email.</li>
+								</ol>
+								</div>
+							</div>
+						</div>
+					
+						<div class="row">
+							<div class="col-lg-8 ">
+								<div class="btn-group form-group col-lg-12 col-xs-12" ng-model="trip">
+									<button type="button" id="twoway" ng-class="twoway" class="btn btn-outline-primary col-lg-4 col-md-4 col-sm-4 col-xs-4 mybtn" style="border-color: #bebeb9;" ng-click="twowayclick()">Roundtrip</button>
+									<button type="button" id="oneway" ng-class="oneway" class="btn btn-outline-primary col-lg-4 col-md-4 col-sm-4 col-xs-4 mybtn" style="border-color: #bebeb9;" ng-click="onewayclick()">One way</button>
+									<button type="button" id="multiway" ng-class="multiway" ng-click="multiwayclick()" class="btn btn-outline-primary col-lg-4 col-md-4 col-sm-4 col-xs-4 mybtn" style="border-color: #bebeb9;">Multi-City</button>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row mb-1">
+							<div class="col-lg-8  input-group mb-1">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  form-group">
+									<input type="text" name="givenname" ng-model='name' id="givenname" class="form-control " required placeholder="Enter Your Name"/>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 input-group">
+									<!-- ng-options="phonecode as phonecode.name for phonecode in phonecodes"  -->
+										<select ng-options="phonecode as phonecode.name  for phonecode in phonecodes" ng-model="selected" id="phoneCode" ng-change="selectphonecode()" class="form-control col-lg-4 col-xs-3">
+												</select>					 
+									  
+									  <input type="text" name="phone" id="phone"  ng-model="phone" class="form-control col-lg-8 col-xs-9" placeholder="Phone Number" required/>  
+								</div>
+							</div>
+						</div>
+						
+						<div class="row mb-1">
+							<div class="col-lg-8  input-group mb-1">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group">
+									<input type="email" name="email" id="email" class="form-control " ng-model="email" placeholder="E-Mail" required/>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<button type="button" id="passcabin" name="passcabin" ng-click="togglePassCabin()" class="btn btn-outline-primary btn-block passcabin" style="text-align:left; border-color:#b8b8b8;color:#777575">{{nofpass}} | {{cabin}} <i style="float:right;" class="fa fa-caret-down" ng-hide="caret" ></i> <i style="float:right;"  class="fa fa-caret-up" ng-hide="!caret" ></i></button>
+									
+									<!---Passenger Cabin Toggle-------->
+									<div class="position-absolute" ng-hide="!cabinpass" style="width:300px; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.31); background-color: #ffffff;z-index:1;">
+										<div class="col-lg-12 col-xs-12" style="padding:20px;">	
+											<div class="row" style="margin-bottom:20px;"> 
+												
+												<div class="col-lg-12  col-xs-12 form-inline" style="">
+													<div class="col-lg-4  col-xs-4">
+														<span for="cabin">Cabin</span>
+													</div> 
+													<div class="col-lg-8 col-xs-8" >
+														<select ng-model="cabin" id="cabin" style="cursor:pointer;" class="form-control form-control-sm">
+															<option>Business</option>
+															<option>First</option>
+														  </select>
+													</div>
+												</div>
+											</div>
+											<div class="row"> 
+												<div class="col-lg-12  col-xs-12 form-inline" style="">
+														<div class="col-lg-4  col-xs-4">
+															<span>Passengers</span>
+														</div>
+														<div  class=" col-lg-8 col-xs-8">
+															<span ng-click="addpassenger()"><i style="font-size:16px;cursor:pointer;" class="fa" >&#xf196;</i> </span>
+														&nbsp;&nbsp;<span>{{nofpass}}&nbsp;&nbsp;
+															<span class="" ng-click="removepassenger()"><i style="font-size:16px;cursor:pointer;" class="fa">&#xf147;</i></span>
+														</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!---Passenger Cabin Toggle-------->
+							</div>		
+							</div>
+						</div>
+						
+						<div class="row onewaydiv mb-1" ng-if="onewaydiv">
+							<div class="col-lg-8  input-group mb-1">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  form-group">
+									<input type="text" name="from" id="from" class="form-control autocomplete"  ng-model="fromcity" placeholder="From" required/>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									  <input type="text" name="to" id="to"  class="form-control autocomplete"  ng-model="tocity" placeholder="To" required/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row onewaydiv mb-1" ng-if="onewaydiv">
+							<div class="col-lg-8  input-group mb-1">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group">
+									<input type="text" name="deaprt" id="departuredate" class="form-control departuredate datepicker" placeholder="Departure Date"  ng-model="deptdate" required/>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									  <input type="text" name="arrive" id="returndate" ng-disabled="returndaydis"  class="form-control returndate datepicker" placeholder="Return Date" ng-model="retdate" required/>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						<div class="row multi1 mb-1" ng-if="multiwaydiv">
+							<div class="col-lg-8 ">
+								<div class="input-group form-group col-lg-12 col-xs-12">
+									<input type="text" name="from1" id="from1" 
+									class="form-control  autocomplete" ng-model="from1" placeholder="From" required/>
+									<input type="text" name="to1" id="to1"  ng-model="to1" 
+									class="form-control autocomplete" placeholder="To" ng-model="to1" required/>
+									<input type="text" name="departure1" id="depart1" class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 departuredate1 multicitydate datepicker" placeholder="Depart"  ng-model="departuredate1" required/>								
+								</div>
+							</div>
+						</div>
+						<div class="row multi2 mb-1" ng-if="multiwaydiv">
+							<div class="col-lg-8 ">
+								<div class="input-group form-group col-lg-12 col-xs-12">
+									<input type="text" name="from2" id="from2" ng-model="from2" 
+									class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 autocomplete" placeholder="From" required/>
+									<input type="text" name="to2" id="to2" ng-model="to2"  
+									class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 autocomplete" placeholder="To" required/>
+									<input type="text" name="departure2" id="depart2" class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 departuredate2 multicitydate datepicker" placeholder="Depart" ng-model="departuredate2" required/>								
+								</div>
+							</div>
+						</div>
+						<div class="row mb-1" ng-hide="!multi3">
+							<div class="col-lg-8 ">
+								<div class="input-group form-group col-lg-12 col-xs-12">
+									<input type="text" name="from3" id="from3" ng-model="from3" 
+									class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 autocomplete" placeholder="From"/>
+									<input type="text" name="to3" id="to3"  ng-model="to3" 
+									class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 autocomplete" placeholder="To"/>
+									<input type="text" name="departure3" id="depart3" class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 departuredate3  multicitydate datepicker" ng-model="departuredate3" placeholder="Depart"/>								
+								</div>
+							</div>
+						</div>
+						<div class="row mb-1" ng-hide="!multi4">
+							<div class="col-lg-8 ">
+								<div class="input-group form-group col-lg-12 col-xs-12">
+									<input type="text" name="from4" id="from4" ng-model="from4" 
+									class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 autocomplete" placeholder="From"/>
+									<input type="text" name="to4" id="to4" ng-model="to4" 
+									class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 autocomplete" placeholder="To"/>
+									<input type="text" name="departure4" id="depart4" class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 departuredate4 multicitydate datepicker" ng-model="departuredate4" placeholder="Depart"/>								
+								</div>
+							</div>
+						</div>
+						<div class="row mb-1" ng-hide="!multi5">
+							<div class="col-lg-8 ">
+								<div class="input-group form-group col-lg-12 col-xs-12">
+									<input type="text" name="from5" id="from5" ng-model="from5"  
+									class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 autocomplete" placeholder="From"/>
+									<input type="text" name="to5" id="to5"  ng-model="to5" 
+									class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 autocomplete" placeholder="To"/>
+									<input type="text" name="departure5" id="depart5" class="form-control col-lg-4 col-md-4 col-sm-4 col-xs-4 departuredate5 multicitydate datepicker" ng-model="departuredate5" placeholder="Depart"/>								
+								</div>
+							</div>
+						</div>
+						
+						<div class="row addrow" style="color:#9c9d9e;" ng-if="multiwaydiv">
+							<div class="col-lg-8 ">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+									 Destination(max 5) <span style="cursor:pointer;"  ng-click="adddestination()" class="addico"><i style="font-size:16px;" class="fa" >&#xf196;</i> Add </span>
+									&nbsp;&nbsp;<span class="rmico" style="cursor:pointer;" ng-click="rmdestination()"><i style="font-size:16px;" class="fa">&#xf147;</i> Remove</span> 
+								</div>
+							</div>
+						</div>
+						
+						<div class="row mb-1">
+							<div class="col-lg-8  input-group mb-1">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+									<textarea class="form-control" rows="4" name="comment" id="comment" ng-model="comment" placeholder="Comment"></textarea>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row mb-1">
+							<div class="col-lg-8  input-group mb-1">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+								<!--style="color: white;border: none;background-color: #e74c3c;"-->
+									<input type="submit" class="btn btn-info btn-block" value="GET A FREE QUOTE">
+								</div>
+							</div>
+						</div>
+						<div class="row mb-1">
+							<div class="col-lg-8  input-group mb-1">
+								<div class="g-recaptcha" data-sitekey="6Ld5x20UAAAAACz32cjdeYZ0ys9vOeBhVPS8qCv6"></div>
+							</div>
+						</div>
+						
+					</form>
+				</div>
+			
+				<div class="col-lg-4">
+											
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+</body>
